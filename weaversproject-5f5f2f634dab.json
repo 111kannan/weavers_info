@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "weaversproject",
+  "private_key_id": "5f5f2f634dabe4d302c7bcb0316a058b0bf2ba63",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDaqXpD+o6GSO8H\nTM6EsLkPIUCBntpDamXaS6aw14gOUqm9/kRsL3JR46iBqRJpSHE+jho9+qoTmsO+\nEXs/bez9nIzovV0Ux0YpNq4sLGPH0sEArU7/boahkHmMlJSFT41LXoxGAGgFyWyK\n+aJZ5qA7QjFogOEojMZh4+YkumlI8iXooEQlPmecv3tE+rJHP1qUbVqR/eohCKCg\nTGIz/IC3ooFjLH8kCZBKCXLtKBwoEqhjnhYO0W/Xekql099rbsKakfHxVPhDtnBt\nYtTint47UioQFyHhII3CWvDoh1q3IuZPI0hJ2dvf9ZWNNz8D5EVhK25ovrH0uEku\nez92gbS3AgMBAAECggEAT5wZkCtmfZyLLiC4JdZDoi8MkcS4mYfgyk/1wffOqMxO\n0YYD+lFx8T+OJ5rbQaqm1EwfYMZk6ptTvd0WfrryaEl5gfkDrR96O2IVmq6Uq3lf\nXHQ8yUG/0Y3MuzKTOlAC1Nh5ALmAJe82TgjiI5IUb07Dt1UI5N8QES7MqT2XPH+E\nLc6/0i6btF3oShW43xFp/pRpiPD6PcDP6lwcvlu06JdnI0MwCnzlaG1bl3xGcAEB\nd/mksN9A2nO26rXgUlQ3Dhyk+4xlc3KDGZouekes7sXl9fmpHA109XPsMXLd8sm8\nuNRUnW6YLJzsb81twoO7H2q7k/bKrX+aImYpzPBAzQKBgQD+ywdQWlxQVvvH0Q9o\nOEJLn2AMor+yWaTo3JfHcAb88GUBLYQTS72h8//lIkONym03pzmKV938I29aYyvX\n/vva4P2jFEzxj/ud++/NxcN+UbneOMmmt/hM1Ga/+CJ/mi9tOwXdYPBTsIa344UW\ny/hgnYzos8P4X4jQlGtD0ENIDQKBgQDbsqKbaFJa9lS1Hwqn9LXGKoxD4g0zSqn6\n/aA34bYPd5ApAJVQoltqAvGJZ/N8g9u5ZKIqiUtQn13+S3TVyJg/sa+cx+mdYHpv\nxxy7vIDUgWFbEn5QOI18vUyLDFTrRlNY8yTf+K/g3oTgPaPT68syBxRdWPwXY4+I\nM6lQlawa0wKBgQDzEknl9G6BDpqg4+co7BMDBgahx1nOEgtrQ5dg4pUoFUamuv93\nURiWOqrzs55y1J0hLN2OB4l1E3EV7+pR46XuCBqwy5skENJgw4rg6jw4dEs3n0Fx\nVa0Bztg/Z7+xsCxyro5HxkU/8fZz1BCR0QEhWuyky2q3tpxVMGKsjTDCuQKBgHGX\neiW6GaK4bHG9XAgdKYMNarqKfWLAvwRr8FQUWsrCegIJMCqh13wHi5UM70K49nlz\nw7kUhaFo1PNvVjhW4AlGuNLqNirNwGBc5clXnJDDWG/7Lt4Rb25IffQC60E+ekeq\nZ6156o3s320F0df3uXbjXC8rnCQHsSWt+GQXDwZLAoGBAOg5kHEmypXvrPo7j4zr\n9UNSOX4HzZX+yzlsWueOqkq+9rK0o4ilyGyID4Pv8DWkZtbXhHHilbLq/uZ/D0eg\n9NR40EmkzqvQBUFdFDA9yGMHCDfezG3Y0rsaEYYb5yLqpmS3rX3gnXBsLwm7T+yt\nFjn+dpZ9qv6yn6qcXvNVNuqF\n-----END PRIVATE KEY-----\n",
+  "client_email": "weavers-info@weaversproject.iam.gserviceaccount.com",
+  "client_id": "105522559401175910135",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/weavers-info%40weaversproject.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
