@@ -112,7 +112,7 @@ def clear_form():
 # Function to handle form submission
 def submit_form():
     # Check mandatory fields
-    if st.session_state["weaver_name"] and st.session_state["address"] and st.session_state["weaving_type"] and st.session_state["whatsapp_number"] and st.session_state["phone_number"]:
+    if st.session_state["weaver_name"] and st.session_state["address"] and st.session_state["weaving_type"] and st.session_state["whatsapp_number"]:
         # Append data to Google Sheet
         sheet.append_table(values=[
             st.session_state["weaver_name"], 
@@ -149,21 +149,21 @@ else:
     st.markdown("""
     <div class='content'>
         <h2>About Us</h2>
-        <p>Weavers Community is dedicated to supporting and promoting the art of weaving. Our goal is to connect weavers from around the world, share knowledge, and provide a platform to showcase and sell their beautiful creations.</p>
-        <p>By joining our community, you'll have access to resources, workshops, and a network of fellow weavers. Together, we can keep the tradition of weaving alive and thriving.</p>
+        <p>நெசவாளர் சமூகம் நெசவு கலையை ஆதரிப்பதற்கும் மேம்படுத்துவதற்கும் அர்ப்பணித்துள்ளது. உலகெங்கிலும் உள்ள நெசவாளர்களை இணைப்பது, அறிவைப் பகிர்ந்து கொள்வது மற்றும் அவர்களின் அழகான படைப்புகளைக் காட்சிப்படுத்தவும் விற்கவும் ஒரு தளத்தை வழங்குவதே எங்கள் குறிக்கோள்.</p>
+        <p>எங்கள் சமூகத்தில் சேர்வதன் மூலம், வளங்கள் மற்றும் சக நெசவாளர்களின் வலையமைப்பிற்கான அணுகலைப் பெறுவீர்கள். ஒன்றுபட்டால், நெய்தல் மரபை உயிர்ப்போடு, செழித்து வைத்திருக்கலாம்.</p>
     </div>
     """, unsafe_allow_html=True)
 
     # Form to get user input
     with st.form("weaver_form"):
         # st.markdown("<div class='form-container'>", unsafe_allow_html=True)
-        weaver_name = st.text_input("Weaver's Name", key="weaver_name")
-        address = st.text_area("Address", key="address")
-        weaving_type = st.selectbox("Weaving Type", ["Korvai", "Ettukol", "Dharmavaram","Thallu Machine Korvai"], key="weaving_type")
+        weaver_name = st.text_input("நெசவாளர் பெயர்", key="weaver_name")
+        address = st.text_area("முகவரி", key="address")
+        weaving_type = st.selectbox("நெசவு வகை", ["Korvai", "Ettukol", "Dharmavaram","Thallu Machine Korvai","Jacquard Weaving"], key="weaving_type")
         whatsapp_number = st.text_input("WhatsApp Number", key="whatsapp_number")
-        phone_number = st.text_input("Phone Number", key="phone_number")
-        email_address = st.text_input("Email Address (Optional)", key="email_address")
-        submit = st.form_submit_button("Submit", on_click=submit_form)
+        # phone_number = st.text_input("Phone Number", key="phone_number")
+        email_address = st.text_input("மின்னஞ்சல் முகவரி (Optional)", key="email_address")
+        submit = st.form_submit_button("சமர்ப்பிக்க", on_click=submit_form)
 
         st.markdown("</div>", unsafe_allow_html=True)
 
