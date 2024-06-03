@@ -15,19 +15,19 @@ st.set_page_config(page_title="Weaver's Community", page_icon="🧵", layout="ce
 st.markdown("""
     <style>
         .main {
-            background-color: #f6fabb;
+            background-color: #FFFFFF;
             color: #4b4b4b;
         }
         .title {
             font-size: 2.5em;
-            color: #8a2be2;
+            color: #000000;
             text-align: center;
             font-family: 'Georgia', serif;
             margin-top: 0;
         }
         .subtitle {
             font-size: 1.5em;
-            color: #555;
+            color: #000000;
             text-align: center;
             margin-bottom: 50px;
             font-family: 'Arial', sans-serif;
@@ -40,7 +40,7 @@ st.markdown("""
             margin-top: 30px;
         }
         .stButton button {
-            background: linear-gradient(90deg, #8a2be2, #6a0dad);
+            background: linear-gradient(90deg, #000000, #000000);
             border: none;
             color: white;
             padding: 10px 20px;
@@ -65,7 +65,7 @@ st.markdown("""
         .content {
             font-family: 'Arial', sans-serif;
             line-height: 1.6;
-            margin-bottom: 30px;
+            margin-bottom: 20px;
         }
         .content h2 {
             color: #8a2be2;
@@ -118,10 +118,8 @@ def submit_form():
             st.session_state["weaver_name"], 
             st.session_state["address"], 
             st.session_state["weaving_type"], 
-            st.session_state["whatsapp_number"], 
-            st.session_state["phone_number"], 
-            st.session_state["email_address"]
-        ])
+            st.session_state["whatsapp_number"]
+                            ])
         # Set form submission state
         st.session_state["form_submitted"] = True
         # Clear form fields
@@ -149,21 +147,20 @@ else:
     st.markdown("""
     <div class='content'>
         <h2>About Us</h2>
-        <p>நெசவாளர் சமூகம் நெசவு கலையை ஆதரிப்பதற்கும் மேம்படுத்துவதற்கும் அர்ப்பணித்துள்ளது. உலகெங்கிலும் உள்ள நெசவாளர்களை இணைப்பது, அறிவைப் பகிர்ந்து கொள்வது மற்றும் அவர்களின் அழகான படைப்புகளைக் காட்சிப்படுத்தவும் விற்கவும் ஒரு தளத்தை வழங்குவதே எங்கள் குறிக்கோள்.</p>
-        <p>எங்கள் சமூகத்தில் சேர்வதன் மூலம், வளங்கள் மற்றும் சக நெசவாளர்களின் வலையமைப்பிற்கான அணுகலைப் பெறுவீர்கள். ஒன்றுபட்டால், நெய்தல் மரபை உயிர்ப்போடு, செழித்து வைத்திருக்கலாம்.</p>
+        <p>The Weavers Community is dedicated to supporting and promoting the art of weaving, connecting weavers worldwide. By joining our community, you'll gain access to essential resources, innovative workshops, and a network of skilled weavers. Together, we can keep the tradition of weaving alive and thriving.</p>
+<p>நெசவாளர் சமூகம் நெசவு கலையை ஆதரித்து, உலகெங்கிலும் உள்ள நெசவாளர்களை இணைக்கும் தளமாக செயல்படுகிறது. எங்கள் சமூகத்தில் சேர்ந்து முக்கிய வளங்கள், புதுமையான பட்டறைகள், மற்றும் திறமையான நெசவாளர்களின் வலையமைப்பிற்கான அணுகலைப் பெறுங்கள். ஒன்றுபட்டால், நெய்தல் மரபை உயிர்ப்போடு, செழித்து வளர்த்திடலாம்.</p>
     </div>
     """, unsafe_allow_html=True)
 
     # Form to get user input
     with st.form("weaver_form"):
         # st.markdown("<div class='form-container'>", unsafe_allow_html=True)
-        weaver_name = st.text_input("நெசவாளர் பெயர்", key="weaver_name")
-        address = st.text_area("முகவரி", key="address")
-        weaving_type = st.selectbox("நெசவு வகை", ["Korvai", "Ettukol", "Dharmavaram","Thallu Machine Korvai","Jacquard Weaving"], key="weaving_type")
+        weaver_name = st.text_input("Weaver's Name(நெசவாளர் பெயர்)", key="weaver_name")
+        address = st.text_area("Address(முகவரி)", key="address")
+        weaving_type = st.selectbox("Loom Type(நெசவு வகை)", ["Korvai", "Ettukol", "Dharmavaram","Thallu Machine Korvai","Jacquard Weaving","Others"], key="weaving_type")
         whatsapp_number = st.text_input("WhatsApp Number", key="whatsapp_number")
         # phone_number = st.text_input("Phone Number", key="phone_number")
-        email_address = st.text_input("மின்னஞ்சல் முகவரி (Optional)", key="email_address")
-        submit = st.form_submit_button("சமர்ப்பிக்க", on_click=submit_form)
+        submit = st.form_submit_button("Submit(சமர்ப்பிக்க)", on_click=submit_form)
 
         st.markdown("</div>", unsafe_allow_html=True)
 
