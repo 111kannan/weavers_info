@@ -17,7 +17,7 @@ sheet_credentials = spreadsheet.worksheet_by_title("credentials")
 default_whatsapp_message = "Hi. This is Kannan from JNV Silks."
 encoded_message_whatsapp = urllib.parse.quote(default_whatsapp_message)
 
-call_status = ["", "Not interested", "Followup-not picked", "Followup - proceed next"]
+call_status = ["", "Not interested", "Followup-not picked", "Followup - proceed next","Not Required"]
 whatsapp_status = ["", "Sent", "Followup", "Wrong_number"]
 
 # Function to generate WhatsApp link
@@ -71,6 +71,11 @@ if "done" not in st.session_state:
     st.session_state.done = False
 if "rows_to_update" not in st.session_state:
     st.session_state["rows_to_update"] = ""
+if "phone_number1" not in st.session_state:
+    st.session_state["phone_number1"] = ""
+if "phone_number2" not in st.session_state:
+    st.session_state["phone_number2"] = ""
+
 
 # Function to show the login page
 def show_login_page():
@@ -126,6 +131,8 @@ def show_shop_communication_page():
                 st.session_state["call_status_update"] = ""
                 st.session_state["whatsapp_status_update"] = ""
                 st.session_state["done"] = True
+                st.session_state["phone_number1"] = ""
+                st.session_state["phone_number2"] = ""
                 button_placeholder.empty()
         
         if st.session_state["loaded"]:
@@ -135,9 +142,19 @@ def show_shop_communication_page():
                 st.markdown(f'<a href="tel:{row["Phone"]}" target="_blank">Click here to call {row["Phone"]}</a>', unsafe_allow_html=True)
                 whatsapp_link = generate_whatsapp_link(row["Phone"], default_whatsapp_message)
                 st.markdown(f'<a href="{whatsapp_link}" target="_blank">Click here to Whatsapp {row["Phone"]}</a>', unsafe_allow_html=True)
+                
+                if row["Phone number1"]:
+                    st.markdown(f'<a href="tel:{row["Phone number1"]}" target="_blank">Click here to call {row["Phone number1"]}</a>', unsafe_allow_html=True)
+                    whatsapp_link = generate_whatsapp_link(row["Phone number1"], default_whatsapp_message)
+                    st.markdown(f'<a href="{whatsapp_link}" target="_blank">Click here to Whatsapp {row["Phone number1"]}</a>', unsafe_allow_html=True)
+                
+                if row["Phone number2"]:
+                    st.markdown(f'<a href="tel:{row["Phone number2"]}" target="_blank">Click here to call {row["Phone number2"]}</a>', unsafe_allow_html=True)
+                    whatsapp_link = generate_whatsapp_link(row["Phone number2"], default_whatsapp_message)
+                    st.markdown(f'<a href="{whatsapp_link}" target="_blank">Click here to Whatsapp {row["Phone number2"]}</a>', unsafe_allow_html=True)
 
                 st.write(f"Shop Name: {row['Shop_name']}")
-                st.write(f"Current Status: {row['Call Status']}")
+                st.write(f"Initial Status: {row['Call Status']}")
                 st.write(f"Address: {row['Address']}")
                 st.write(f"Website: {row['Website']}")
                 st.write(f"Number of Google Reviews: {row['Reviews']}")
@@ -169,6 +186,36 @@ def show_shop_communication_page():
                         cell_address = (st.session_state.current_index + 2, st.session_state.df.columns.get_loc('Whatsapp Status') + 1)  # Adjust for 1-indexed Google Sheets and header row
                         sheet_customers.update_value(cell_address, st.session_state["whatsapp_status"])
                         st.success("Whatsapp Status Updated.")
+                    
+                if st.session_state["phone_number1"] == "":
+                    phone_nm1 = st.text_input("Phone_number1",value=row["Phone number1"])
+                    if phone_nm1!=row["Phone number1"]:
+                        st.session_state["phone_number1"] = phone_nm1
+                        cell_address = (st.session_state.current_index + 2, st.session_state.df.columns.get_loc('Phone number1') + 1)
+                        sheet_customers.update_value(cell_address, st.session_state["phone_number1"])
+                        st.success("phone number1 Updated.")
+                else:
+                    phone_nm1 = st.text_input("Phone_number1",value = st.session_state["phone_number1"])
+                    if phone_nm1!=st.session_state["phone_number1"]:
+                        st.session_state["phone_number1"] = phone_nm1
+                        cell_address = (st.session_state.current_index + 2, st.session_state.df.columns.get_loc('Phone number1') + 1)  # Adjust for 1-indexed Google Sheets and header row
+                        sheet_customers.update_value(cell_address, st.session_state["phone_number1"])
+                        st.success("phone number1 Updated")
+                
+                if st.session_state["phone_number2"] == "":
+                    phone_nm1 = st.text_input("Phone_number2",value=row["Phone number2"])
+                    if phone_nm1!=row["Phone number2"]:
+                        st.session_state["phone_number2"] = phone_nm1
+                        cell_address = (st.session_state.current_index + 2, st.session_state.df.columns.get_loc('Phone number2') + 1)
+                        sheet_customers.update_value(cell_address, st.session_state["phone_number2"])
+                        st.success("phone number2 Updated.")
+                else:
+                    phone_nm1 = st.text_input("Phone_number2",value = st.session_state["phone_number2"])
+                    if phone_nm1!=st.session_state["phone_number2"]:
+                        st.session_state["phone_number2"] = phone_nm1
+                        cell_address = (st.session_state.current_index + 2, st.session_state.df.columns.get_loc('Phone number2') + 1)
+                        sheet_customers.update_value(cell_address, st.session_state["phone_number2"])
+                        st.success("phone number2 Updated")
 
 # Function to show the transaction details page
 
